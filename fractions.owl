@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:frac="http://www.example.org/frac_ontology#">
+    <owl:Ontology rdf:about="http://www.example.org/frac_ontology"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.example.org/frac_ontology#RationalNumber"/>
+    <owl:Class rdf:about="http://www.example.org/frac_ontology#MathOperation"/>
+
+    <!-- Datatype Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.example.org/frac_ontology#numeratorValue">
+        <rdfs:domain rdf:resource="http://www.example.org/frac_ontology#RationalNumber"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/frac_ontology#denominatorValue">
+        <rdfs:domain rdf:resource="http://www.example.org/frac_ontology#RationalNumber"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/frac_ontology#executesOperationOn">
+        <rdfs:domain rdf:resource="http://www.example.org/frac_ontology#MathOperation"/>
+        <rdfs:range rdf:resource="http://www.example.org/frac_ontology#RationalNumber"/>
+    </owl:ObjectProperty>
+
+    <!-- Individuals -->
+    <RationalNumber rdf:about="http://www.example.org/frac_ontology#Half">
+        <rdfs:label>1/2</rdfs:label>
+        <numeratorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numeratorValue>
+        <denominatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</denominatorValue>
+    </RationalNumber>
+
+    <RationalNumber rdf:about="http://www.example.org/frac_ontology#OneThird">
+        <rdfs:label>1/3</rdfs:label>
+        <numeratorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numeratorValue>
+        <denominatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</denominatorValue>
+    </RationalNumber>
+
+    <MathOperation rdf:about="http://www.example.org/frac_ontology#Add">
+        <rdfs:label>Addition</rdfs:label>
+    </MathOperation>
+
+    <MathOperation rdf:about="http://www.example.org/frac_ontology#Subtract">
+        <rdfs:label>Subtraction</rdfs:label>
+    </MathOperation>
+
+    <MathOperation rdf:about="http://www.example.org/frac_ontology#Multiply">
+        <rdfs:label>Multiplication</rdfs:label>
+    </MathOperation>
+
+    <MathOperation rdf:about="http://www.example.org/frac_ontology#Divide">
+        <rdfs:label>Division</rdfs:label>
+    </MathOperation>
+</rdf:RDF>
